@@ -127,6 +127,11 @@ nav{background:var(--navy);padding:0 48px;display:flex;justify-content:space-bet
 .enquiry-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
 .btn-submit{background:var(--gold);color:var(--navy);font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;padding:16px;border:none;cursor:pointer;width:100%;transition:opacity 0.2s;}
 .btn-submit:hover{opacity:0.85;}
+.whatsapp-divider{text-align:center;margin:20px 0 16px;position:relative;}
+.whatsapp-divider::before{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:rgba(201,168,76,0.2);}
+.whatsapp-divider span{background:var(--navy);padding:0 16px;font-size:12px;color:rgba(248,243,232,0.4);position:relative;letter-spacing:1px;}
+.btn-whatsapp{display:block;background:#25D366;color:white;text-align:center;padding:16px;font-size:15px;font-weight:500;letter-spacing:1px;text-decoration:none;transition:opacity 0.2s;border-radius:2px;}
+.btn-whatsapp:hover{opacity:0.9;}
 
 /* FOOTER */
 footer{background:#0D1B2A;padding:40px 48px;display:flex;justify-content:space-between;align-items:center;}
@@ -199,7 +204,7 @@ footer p{font-size:11px;color:rgba(248,243,232,0.25);margin-top:4px;letter-spaci
     <a href="#about">About</a>
     <a href="#enquiry">Corporate</a>
   </div>
-  <button class="nav-cta">Order Now</button>
+  <a href="https://wa.me/919922045732?text=Hi%21%20I%27m%20interested%20in%20The%20Tea%20Passport%20for%20my%20event.%20Can%20you%20please%20share%20more%20details%3F" target="_blank" class="nav-cta" style="text-decoration:none;">Order Now</a>
 </nav>
 
 <!-- HERO -->
@@ -213,7 +218,7 @@ footer p{font-size:11px;color:rgba(248,243,232,0.25);margin-top:4px;letter-spaci
     <h1>The Tea<br><em>Passport</em></h1>
     <p class="hero-sub">A world tea experience brought to your event. Taste seven countries, collect your favourites, and take home a story in every cup.</p>
     <div class="hero-actions">
-      <button class="btn-primary">Explore Collection</button>
+      <a href="https://wa.me/919922045732?text=Hi%21%20I%27m%20interested%20in%20The%20Tea%20Passport%20for%20my%20event.%20Can%20you%20please%20share%20more%20details%3F" target="_blank" class="btn-primary" style="text-decoration:none;">Explore Collection</a>
       <button class="btn-ghost">Corporate Gifting</button>
     </div>
     <div class="hero-stats">
@@ -315,7 +320,7 @@ footer p{font-size:11px;color:rgba(248,243,232,0.25);margin-top:4px;letter-spaci
         <p class="product-desc">Choose your destination. 50g of premium loose-leaf tea with country story and brewing guide.</p>
         <div class="product-footer">
           <div class="product-price">₹199 <span>/ packet</span></div>
-          <button class="btn-order">Order</button>
+          <a href="https://wa.me/919922045732?text=Hi%21%20I%27d%20like%20to%20order%20a%20Single%20Country%20Packet%20from%20The%20Tea%20Passport.%20Can%20you%20help%3F" target="_blank" class="btn-order" style="text-decoration:none;">Order</a>
         </div>
       </div>
     </div>
@@ -329,7 +334,7 @@ footer p{font-size:11px;color:rgba(248,243,232,0.25);margin-top:4px;letter-spaci
         <p class="product-desc">All 7 countries in a passport-style booklet box. The perfect gift for curious souls.</p>
         <div class="product-footer">
           <div class="product-price">₹1,499 <span>/ box</span></div>
-          <button class="btn-order">Order</button>
+          <a href="https://wa.me/919922045732?text=Hi%21%20I%27d%20like%20to%20order%20The%20Passport%20Box%20from%20The%20Tea%20Passport.%20Can%20you%20help%3F" target="_blank" class="btn-order" style="text-decoration:none;">Order</a>
         </div>
       </div>
     </div>
@@ -343,7 +348,7 @@ footer p{font-size:11px;color:rgba(248,243,232,0.25);margin-top:4px;letter-spaci
         <p class="product-desc">Branded passport boxes for your team or clients. Minimum 25 boxes. Custom branding available.</p>
         <div class="product-footer">
           <div class="product-price">₹999 <span>/ box (bulk)</span></div>
-          <button class="btn-order">Enquire</button>
+          <a href="https://wa.me/919922045732?text=Hi%21%20I%27m%20interested%20in%20the%20Corporate%20Gift%20Set%20from%20The%20Tea%20Passport.%20Can%20you%20share%20more%20details%3F" target="_blank" class="btn-order" style="text-decoration:none;">Enquire</a>
         </div>
       </div>
     </div>
@@ -382,22 +387,24 @@ footer p{font-size:11px;color:rgba(248,243,232,0.25);margin-top:4px;letter-spaci
     <div class="section-eyebrow" style="color:var(--gold);">Corporate & Events</div>
     <div class="section-title">Book an Experience</div>
     <p class="section-sub">Bring The Tea Passport to your next event or order custom corporate gifts.</p>
-    <div class="enquiry-form">
+    <form class="enquiry-form" action="https://formspree.io/f/xaqpvyrg" method="POST">
       <div class="enquiry-row">
-        <input type="text" placeholder="Your name">
-        <input type="text" placeholder="Company / Event name">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="text" name="company" placeholder="Company / Event name">
       </div>
-      <input type="email" placeholder="Email address">
-      <select>
+      <input type="email" name="email" placeholder="Email address" required>
+      <select name="enquiry_type">
         <option value="" disabled selected>Type of enquiry</option>
         <option>Corporate gifting</option>
         <option>Event counter setup</option>
         <option>Wedding experience</option>
         <option>Retail / Online order</option>
       </select>
-      <textarea placeholder="Tell us about your event or requirement..."></textarea>
-      <button class="btn-submit">Send Enquiry</button>
-    </div>
+      <textarea name="message" placeholder="Tell us about your event or requirement..."></textarea>
+      <button type="submit" class="btn-submit">Send Enquiry</button>
+    </form>
+    <div class="whatsapp-divider"><span>or reach us directly on</span></div>
+    <a href="https://wa.me/919922045732?text=Hi%2C%20I%20am%20interested%20in%20The%20Tea%20Passport%20experience!" class="btn-whatsapp" target="_blank">💬 Chat on WhatsApp</a>
   </div>
 </section>
 
